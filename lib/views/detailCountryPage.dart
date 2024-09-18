@@ -68,6 +68,21 @@ class DetailCountryPage extends StatelessWidget {
                 },
                 child: Text('Ver pais no GoogleMaps'),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green.shade800,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(240, 40),
+                ),
+                onPressed: () {},
+                label: Text('Adicionar aos Favoritos'),
+                icon: Icon(
+                  Icons.favorite,
+                ),
+              )
             ],
           ),
         ),
