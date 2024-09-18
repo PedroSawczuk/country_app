@@ -1,16 +1,13 @@
-# paises_app
+# Paises APP
 
-A new Flutter project.
+Atividade final da disciplina de PMO 2. Onde tivemos que construir um aplicativo utilizando a API do RestCountries e listar os países que falam portugues!
 
-## Getting Started
+## Ferramentas 🛠️
 
-This project is a starting point for a Flutter application.
+- **FLUTTER**
+- **DIO**
+- **RESTCOUNTRIES**
 
-A few resources to get you started if this is your first Flutter project:
+## Desenvolvedor 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pedro Sawczuk - 2022105100002

@@ -1,21 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:paises_app/models/countryModel.dart';
 
-class DetailCountryPage extends StatelessWidget {
+class DetailCountryPage extends StatefulWidget {
   final CountryModel country;
-
-  const DetailCountryPage({
+  DetailCountryPage({
     Key? key,
     required this.country,
   }) : super(key: key);
 
+  User? user = FirebaseAuth.instance.currentUser;
+
+  @override
+  State<DetailCountryPage> createState() => _DetailCountryPageState();
+}
+
+class _DetailCountryPageState extends State<DetailCountryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          country.name,
+          widget.country.name,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -30,12 +37,12 @@ class DetailCountryPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Image.network(country.flag),
+              Image.network(widget.country.flag),
               SizedBox(
                 height: 10,
               ),
               Text(
-                country.name,
+                widget.country.name,
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -45,7 +52,7 @@ class DetailCountryPage extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                country.region,
+                widget.country.region,
                 style: TextStyle(
                   fontSize: 17,
                 ),
@@ -54,7 +61,7 @@ class DetailCountryPage extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                'Population: ${country.population}',
+                'Population: ${widget.country.population}',
                 style: TextStyle(
                   fontSize: 17,
                 ),
@@ -64,7 +71,7 @@ class DetailCountryPage extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  _launchUrl(country.googleMaps);
+                  _launchUrl(widget.country.googleMaps);
                 },
                 child: Text('Ver pais no GoogleMaps'),
               ),
@@ -77,12 +84,16 @@ class DetailCountryPage extends StatelessWidget {
                   foregroundColor: Colors.white,
                   fixedSize: Size(240, 40),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                },
                 label: Text('Adicionar aos Favoritos'),
                 icon: Icon(
                   Icons.favorite,
                 ),
-              )
+              ),
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
